@@ -14,6 +14,7 @@ import {
   getFilesForCelebrity,
   CELEBRITY_DATA,
 } from "@/lib/celebrity-data";
+import { translateName } from "@/lib/name-translations";
 import { CelebrityCombobox } from "@/components/celebrity-combobox";
 import { CelebrityDisclaimer } from "@/components/celebrity-disclaimer";
 import { useFiles } from "@/lib/files-context";
@@ -224,8 +225,8 @@ function SharePopover({ filePath, queryString }: { filePath: string; queryString
   const [isOpen, setIsOpen] = useState(false);
 
   const shareUrl = typeof window !== "undefined" 
-    ? `${window.location.origin}/file/${encodeURIComponent(filePath)}${queryString}`
-    : `/file/${encodeURIComponent(filePath)}${queryString}`;
+     ? `${window.location.origin}/?file=${encodeURIComponent(filePath)}${queryString}`
+     : `/?file=${encodeURIComponent(filePath)}${queryString}`;
 
   const handleCopy = async () => {
     try {
@@ -261,7 +262,7 @@ function SharePopover({ filePath, queryString }: { filePath: string; queryString
               <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
               </svg>
-              <span className="text-sm font-medium">分享此文档</span>
+              <span className="text-sm font-medium">分享此内容</span>
             </div>
           <div className="flex gap-2">
             <input
@@ -591,7 +592,7 @@ function FileModal({
                             key={idx}
                             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm bg-card border border-border text-foreground"
                           >
-                            <span>{celeb.name}</span>
+                            <span>{translateName(celeb.name)}</span>
                             <span className="text-xs text-muted-foreground">({Math.round(celeb.confidence)}%)</span>
                           </span>
                         ))}
