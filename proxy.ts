@@ -29,7 +29,7 @@ function isBot(userAgent: string | null): boolean {
   return BOT_USER_AGENTS.some((bot) => ua.includes(bot));
 }
 
-const WORKER_URL = "https://eppic.wld.ink";
+const WORKER_URL = "https://ep.feng.love";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

@@ -21,7 +21,7 @@ import { useFiles } from "@/lib/files-context";
 const WORKER_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8787"
-    : "https://eppic.wld.ink";
+    : "https://ep.feng.love";
 
 function formatFileSize(bytes: number): string {
   if (bytes === 0) return "0 B";

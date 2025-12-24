@@ -105,7 +105,7 @@ export default {
       const thumbnailUrl = `${url.origin}/${thumbnailKey}`;
       
       // Use the main site URL for the page link
-      const siteUrl = "https://eppic.wld.ink";
+      const siteUrl = "https://ep.feng.love";
       
       const html = generateOgHtml(filePath, thumbnailUrl, siteUrl);
       

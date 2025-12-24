@@ -10,7 +10,7 @@ import { CelebrityDisclaimer } from "@/components/celebrity-disclaimer";
 
 const WORKER_URL = process.env.NODE_ENV === "development" 
   ? "http://localhost:8787" 
-  : "https://eppic.wld.ink";
+  : "https://ep.feng.love";
 
 // Track in-progress prefetch operations to avoid duplicates
 const prefetchingSet = new Set<string>();
