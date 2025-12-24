@@ -3,7 +3,6 @@
 import * as React from "react";
 import { Check, ChevronsUpDown, User } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { translateName } from "@/lib/name-translations";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -54,7 +53,7 @@ export function CelebrityCombobox({
               <span className="text-sm font-medium">所有人</span>
             ) : selectedCelebrity ? (
               <span className="truncate text-sm font-medium">
-                {translateName(selectedCelebrity.name)}
+                {selectedCelebrity.name}
                 <span className="text-muted-foreground ml-1">({selectedCelebrity.count})</span>
               </span>
             ) : (
@@ -107,7 +106,7 @@ export function CelebrityCombobox({
                       value === celebrity.name ? "opacity-100" : "opacity-0"
                     )}
                   />
-                  <span className="truncate flex-1">{translateName(celebrity.name)}</span>
+                  <span className="truncate flex-1">{celebrity.name}</span>
                   <span className="text-muted-foreground text-xs ml-2 bg-secondary px-2 py-0.5 rounded-md">
                     {celebrity.count}
                   </span>

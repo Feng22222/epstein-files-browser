@@ -14,7 +14,6 @@ import {
   getFilesForCelebrity,
   CELEBRITY_DATA,
 } from "@/lib/celebrity-data";
-import { translateName } from "@/lib/name-translations";
 import { CelebrityCombobox } from "@/components/celebrity-combobox";
 import { CelebrityDisclaimer } from "@/components/celebrity-disclaimer";
 import { useFiles } from "@/lib/files-context";
@@ -592,7 +591,7 @@ function FileModal({
                             key={idx}
                             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm bg-card border border-border text-foreground"
                           >
-                            <span>{translateName(celeb.name)}</span>
+                            <span>{celeb.name}</span>
                             <span className="text-xs text-muted-foreground">({Math.round(celeb.confidence)}%)</span>
                           </span>
                         ))}
@@ -717,7 +716,13 @@ export function FileBrowser() {
   // Modal state - find index from file key
   const selectedFileIndex = useMemo(() => {
     if (!openFile) return null;
-    const index = filteredFiles.findIndex(f => f.key === openFile);
+    // Try exact match first
+    let index = filteredFiles.findIndex(f => f.key === openFile);
+    // If no exact match, try decoding the file path (in case it's URL encoded)
+    if (index < 0) {
+      const decodedOpenFile = decodeURIComponent(openFile);
+      index = filteredFiles.findIndex(f => f.key === decodedOpenFile);
+    }
     return index >= 0 ? index : null;
   }, [openFile, filteredFiles]);
   
