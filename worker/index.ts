@@ -105,7 +105,7 @@ export default {
       const thumbnailUrl = `${url.origin}/${thumbnailKey}`;
       
       // Use the main site URL for the page link
-      const siteUrl = "https://epstein-files-browser.vercel.app";
+      const siteUrl = "https://ep.wld.ink";
       
       const html = generateOgHtml(filePath, thumbnailUrl, siteUrl);
       

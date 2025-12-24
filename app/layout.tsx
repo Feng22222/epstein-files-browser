@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: "Browse and view the released Epstein files",
 };
 
-const WORKER_URL = "https://epstein-files.rhys-669.workers.dev";
+const WORKER_URL = "https://eppic.wld.ink";
 
 interface AllFilesResponse {
   files: FileItem[];
