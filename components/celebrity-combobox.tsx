@@ -50,14 +50,14 @@ export function CelebrityCombobox({
           <div className="flex items-center gap-2 min-w-0">
             <User className="h-4 w-4 text-muted-foreground flex-shrink-0" />
             {value === "All" ? (
-              <span className="text-sm font-medium">All People</span>
+              <span className="text-sm font-medium">所有人</span>
             ) : selectedCelebrity ? (
               <span className="truncate text-sm font-medium">
                 {selectedCelebrity.name}
                 <span className="text-muted-foreground ml-1">({selectedCelebrity.count})</span>
               </span>
             ) : (
-              <span className="text-sm text-muted-foreground">Select person...</span>
+              <span className="text-sm text-muted-foreground">选择人物...</span>
             )}
           </div>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 text-muted-foreground" />
@@ -66,13 +66,13 @@ export function CelebrityCombobox({
       <PopoverContent className="w-[280px] p-0 bg-card border-border rounded-xl shadow-xl" align="start">
         <Command className="bg-transparent">
           <CommandInput
-            placeholder="Search people..."
+            placeholder="搜索人物..."
             className="text-foreground placeholder:text-muted-foreground border-b border-border"
           />
           <CommandList className="max-h-[300px]">
             <CommandEmpty className="text-muted-foreground py-6 text-center text-sm">
-              No person found.
-            </CommandEmpty>
+            未找到人物。
+          </CommandEmpty>
             <CommandGroup className="p-1.5">
               <CommandItem
                 value="All"
@@ -88,7 +88,7 @@ export function CelebrityCombobox({
                     value === "All" ? "opacity-100" : "opacity-0"
                   )}
                 />
-                <span className="font-medium">All People</span>
+                <span className="font-medium">所有人</span>
               </CommandItem>
               {celebrities.map((celebrity) => (
                 <CommandItem

@@ -248,21 +248,21 @@ function SharePopover({ filePath, queryString }: { filePath: string; queryString
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <button className="p-2 sm:px-4 sm:py-2 bg-secondary hover:bg-accent rounded-xl text-sm font-medium flex items-center gap-2">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-          </svg>
-          <span className="hidden sm:inline">Share</span>
-        </button>
-      </PopoverTrigger>
+              <button className="p-2 sm:px-4 sm:py-2 bg-secondary hover:bg-accent rounded-xl text-sm font-medium flex items-center gap-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+                <span className="hidden sm:inline">分享</span>
+              </button>
+            </PopoverTrigger>
       <PopoverContent className="w-80 p-3" align="end">
         <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-            </svg>
-            <span className="text-sm font-medium">Share this document</span>
-          </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              <span className="text-sm font-medium">分享此文档</span>
+            </div>
           <div className="flex gap-2">
             <input
               type="text"
@@ -285,14 +285,14 @@ function SharePopover({ filePath, queryString }: { filePath: string; queryString
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Copied</span>
+                  <span>已复制</span>
                 </>
               ) : (
                 <>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
-                  <span>Copy</span>
+                  <span>复制</span>
                 </>
               )}
             </button>
@@ -529,15 +529,15 @@ function FileModal({
             <div className="flex items-center gap-2 flex-shrink-0">
               <SharePopover filePath={filePath} queryString={queryString} />
               <a
-                href={fileUrl}
-                download
-                className="p-2 sm:px-4 sm:py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-sm font-medium flex items-center gap-2 shadow-lg shadow-primary/20"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                <span className="hidden sm:inline">Download</span>
-              </a>
+              href={fileUrl}
+              download
+              className="p-2 sm:px-4 sm:py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-sm font-medium flex items-center gap-2 shadow-lg shadow-primary/20"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span className="hidden sm:inline">下载</span>
+            </a>
             </div>
           </div>
         </header>
@@ -546,14 +546,14 @@ function FileModal({
         <div key={filePath} className="flex-1 overflow-auto p-4 sm:p-6 lg:p-8 pb-24" onClick={onClose}>
           {error && (
             <div className="max-w-3xl mx-auto bg-destructive/10 border border-destructive/20 text-destructive px-5 py-4 rounded-2xl mb-6 flex items-start gap-3">
-              <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <div>
-                <p className="font-medium">Error loading PDF</p>
-                <p className="text-sm text-destructive/80 mt-0.5">{error}</p>
-              </div>
+            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <p className="font-medium">加载 PDF 出错</p>
+              <p className="text-sm text-destructive/80 mt-0.5">{error}</p>
             </div>
+          </div>
           )}
 
           <div className="max-w-4xl mx-auto space-y-6">
@@ -564,8 +564,8 @@ function FileModal({
                   <div className="relative">
                     {pages.length > 1 && (
                       <div className="absolute top-3 left-3 px-2.5 py-1 bg-background/80 backdrop-blur-sm rounded-lg text-xs font-medium text-muted-foreground border border-border">
-                        Page {index + 1}
-                      </div>
+                      第 {index + 1} 页
+                    </div>
                     )}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -583,7 +583,7 @@ function FileModal({
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                         </div>
-                        <p className="text-sm font-medium text-foreground">Detected in this image:</p>
+                        <p className="text-sm font-medium text-foreground">在此图像中检测到：</p>
                       </div>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {pageCelebrities.map((celeb, idx) => (
@@ -610,7 +610,7 @@ function FileModal({
                 <div className="w-12 h-12 rounded-full border-2 border-secondary"></div>
                 <div className="absolute inset-0 w-12 h-12 rounded-full border-2 border-primary border-t-transparent animate-spin"></div>
               </div>
-              <p className="text-foreground font-medium">Loading PDF...</p>
+              <p className="text-foreground font-medium">正在加载 PDF...</p>
             </div>
           )}
         </div>
@@ -623,12 +623,12 @@ function FileModal({
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full"
             >
               <kbd className="px-2 py-0.5 bg-secondary rounded-md font-mono text-xs text-foreground">←</kbd>
-              <span>Prev</span>
+              <span>上一页</span>
             </button>
           ) : (
             <div className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground/50 cursor-not-allowed">
               <kbd className="px-2 py-0.5 bg-secondary/50 rounded-md font-mono text-xs text-muted-foreground/50">←</kbd>
-              <span>Prev</span>
+              <span>上一页</span>
             </div>
           )}
           <div className="w-px h-4 bg-border"></div>
@@ -637,12 +637,12 @@ function FileModal({
               onClick={onNext}
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full"
             >
-              <span>Next</span>
+              <span>下一页</span>
               <kbd className="px-2 py-0.5 bg-secondary rounded-md font-mono text-xs text-foreground">→</kbd>
             </button>
           ) : (
             <div className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground/50 cursor-not-allowed">
-              <span>Next</span>
+              <span>下一页</span>
               <kbd className="px-2 py-0.5 bg-secondary/50 rounded-md font-mono text-xs text-muted-foreground/50">→</kbd>
             </div>
           )}
@@ -749,7 +749,7 @@ export function FileBrowser() {
             <div className="flex items-center gap-3">
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                  Epstein Files Browser
+                  爱泼斯坦文件浏览器
                 </h1>
               </div>
             </div>
@@ -778,19 +778,19 @@ export function FileBrowser() {
           <div className="flex gap-3 items-center flex-wrap">
             <div className="relative">
               <select
-                value={collectionFilter}
-                onChange={(e) => setCollectionFilter(e.target.value)}
-                className="appearance-none px-4 py-2.5 pr-10 bg-secondary border border-border rounded-xl text-foreground text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all cursor-pointer hover:bg-accent"
-              >
-                <option value="All">All Collections</option>
-                <option value="VOL00001">Volume 1</option>
-                <option value="VOL00002">Volume 2</option>
-                <option value="VOL00003">Volume 3</option>
-                <option value="VOL00004">Volume 4</option>
-                <option value="VOL00005">Volume 5</option>
-                <option value="VOL00006">Volume 6</option>
-                <option value="VOL00007">Volume 7</option>
-              </select>
+                  value={collectionFilter}
+                  onChange={(e) => setCollectionFilter(e.target.value)}
+                  className="appearance-none px-4 py-2.5 pr-10 bg-secondary border border-border rounded-xl text-foreground text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all cursor-pointer hover:bg-accent"
+                >
+                  <option value="All">所有集合</option>
+                  <option value="VOL00001">第 1 卷</option>
+                  <option value="VOL00002">第 2 卷</option>
+                  <option value="VOL00003">第 3 卷</option>
+                  <option value="VOL00004">第 4 卷</option>
+                  <option value="VOL00005">第 5 卷</option>
+                  <option value="VOL00006">第 6 卷</option>
+                  <option value="VOL00007">第 7 卷</option>
+                </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                 <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -805,14 +805,14 @@ export function FileBrowser() {
 
             <div className="relative">
               <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="appearance-none px-4 py-2.5 pr-10 bg-secondary border border-border rounded-xl text-foreground text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all cursor-pointer hover:bg-accent"
-              >
-                <option value="name">Sort by Name</option>
-                <option value="size-desc">Largest First</option>
-                <option value="size-asc">Smallest First</option>
-              </select>
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="appearance-none px-4 py-2.5 pr-10 bg-secondary border border-border rounded-xl text-foreground text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all cursor-pointer hover:bg-accent"
+                >
+                  <option value="name">按名称排序</option>
+                  <option value="size-desc">从大到小</option>
+                  <option value="size-asc">从小到大</option>
+                </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                 <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -822,7 +822,7 @@ export function FileBrowser() {
 
             <div className="flex items-center gap-2 px-3 py-2 bg-secondary/50 rounded-xl">
               <span className="text-sm font-medium text-muted-foreground">
-                {filteredFiles.length.toLocaleString()} files
+                {filteredFiles.length.toLocaleString()} 个文件
                 {collectionFilter !== "All" || celebrityFilter !== "All"
                   ? <span className="text-foreground/50"> / {initialFiles.length.toLocaleString()}</span>
                   : ""}

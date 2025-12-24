@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Epstein Files Browser",
-  description: "Browse and view the released Epstein files",
+  title: "爱泼斯坦文件浏览器",
+  description: "浏览和查看已发布的爱泼斯坦文件",
 };
 
 const WORKER_URL = "https://ep.feng.love";
